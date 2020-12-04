@@ -1,5 +1,4 @@
 # order matters
-require "truepill/authentication"
 require "truepill/configuration"
 require "truepill/request"
 require "truepill/restful_resource"
