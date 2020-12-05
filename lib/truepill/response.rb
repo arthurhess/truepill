@@ -17,11 +17,21 @@ module Truepill
     end
 
     def success?
-      [200, 201].include?(code)
+      %w(success processed).include?(data[:status]) || !error?
     end
 
     def error?
-      !success?
+      code.to_i / 100 != 2 || data[:statusCode] == 400
+    end
+
+    def errors
+      data[:validation_errors]&.map do |error_data|
+        "#{error_data[:key]} #{error_data[:message]}"
+      end
+    end
+
+    def error_message
+      errors&.join(', ')
     end
 
     ##
