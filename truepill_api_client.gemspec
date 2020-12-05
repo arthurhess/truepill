@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "truepill/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "truepill"
+  spec.name          = "truepill_api_client"
   spec.version       = Truepill::VERSION
   spec.authors       = ["Cerebral Inc., Shanti Braford, Konstantin Raf"]
   spec.email         = ["shanti@getcerebral.com"]
