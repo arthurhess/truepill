@@ -6,5 +6,4 @@ RSpec.describe Truepill::Resources::Patient do
 
   it_behaves_like 'a read action'
   it_behaves_like 'a list action'
-  it_behaves_like 'a replace action'
 end
