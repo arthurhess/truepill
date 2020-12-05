@@ -9,7 +9,7 @@ Truepill API documentation: https://docs.truepill.com/#introduction
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'truepill_api_client'
+gem 'truepill'
 ```
 
 And then execute:
@@ -18,7 +18,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install truepill_api_client
+    $ gem install truepill
 
 ## Usage
 
