@@ -1,5 +1,5 @@
 RSpec.shared_examples_for 'a create action' do
-  include_context 'with authentication'
+  include_context 'with sandbox configuration'
 
   let(:attributes) do
     { field: 'value' }

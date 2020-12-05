@@ -72,12 +72,12 @@ module Truepill
 
     def headers(data = {})
       content_type = data[:multipart] ? MULTIPART_CONTENT_TYPE : JSON_CONTENT_TYPE
-      { Authorization: "ApiKey #{ENV['TRUEPILL_API_KEY']}",
+      { Authorization: "ApiKey #{Truepill.configuration.api_key}",
         'Content-Type': content_type }
     end
 
     def perform_checks(path)
-      if ENV['TRUEPILL_API_KEY'].blank?
+      if Truepill.configuration.api_key.blank?
         raise ::Truepill::AccessTokenNotPresentError, "Truepill access token not present"
       end
 

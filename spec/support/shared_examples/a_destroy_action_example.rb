@@ -1,5 +1,5 @@
 RSpec.shared_examples_for 'a destroy action' do
-  include_context 'with authentication'
+  include_context 'with sandbox configuration'
 
   let(:entity_id) { 'some_id' }
 

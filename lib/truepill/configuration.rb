@@ -8,7 +8,7 @@ module Truepill
     # [String] Environment to use - 'production' or 'sandbox'
     attr_reader :environment
     # [String] Client API Key (obtain from the Truepill portal)
-    attr_accessor :client_api_key
+    attr_accessor :api_key
 
     def initialize
       # default to sandbox environment
