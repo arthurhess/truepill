@@ -29,24 +29,8 @@ In a Rails app, this might go in `config/initializers/truepill.rb` for example.
 ```ruby
 Truepill.configure do |config|
   config.environment = Rails.env.production? ? :production : :sandbox
-  config.client_id = ENV['TRUEPILL_CLIENT_ID']
-  config.client_secret = ENV['TRUEPILL_CLIENT_SECRET']
-  config.persist_token = lambda do |value|
-    Rails.cache.write("truepill_access_token", value)
-  end
-  config.persisted_token = lambda do
-    Rails.cache.read("truepill_access_token")
-  end
+  config.api_key = ENV['TRUEPILL_API_KEY']
 end
-```
-
-Access tokens are valid for 3600 seconds (60 minutes) as of this writing. You will need to obtain a new access token if the previous one has expired.
-
-Test the API by hitting the /ping endpoint (continued from above example):
-
-```ruby
-Truepill::Request.new.ping?
-# => true
 ```
 
 ## Contributing
