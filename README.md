@@ -35,7 +35,7 @@ end
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/cerebral-inc/truepill\_api\_client.
+Bug reports and pull requests are welcome on GitHub at: [https://github.com/cerebral-inc/truepill](https://github.com/cerebral-inc/truepill)
 
 ## License
 

@@ -6,20 +6,6 @@ module Truepill
   # Resource classes should inherit from this class. Defines core methods like list, create, read, update
   # that can then be used by the subclasses by making the applicable methods available.
   #
-  # For non-standard naming convention routes, subclasses should override the "resource_base" method.
-  #
-  # Example:
-  #
-  # class ServiceLine < RestfulRequest
-  #   def initialize(appointment_id)
-  #     @appointment_id
-  #   end
-  #
-  #   def resource_base
-  #     "appointments/#{@appointment_id}/service_lines/"
-  #   end
-  # end
-  #
 
   class RestfulResource < Request
 

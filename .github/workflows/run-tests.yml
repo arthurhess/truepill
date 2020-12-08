@@ -35,7 +35,7 @@ jobs:
           {
             attachments: [{
               color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
-              text: `${process.env.AS_MESSAGE} by ${process.env.AS_AUTHOR.replace(/\<.+\>/, '')} succeeded in ${process.env.AS_TOOK} \n${process.env.AS_REPO}@<https://github.com/cerebral-inc/gentem/tree/${process.env.AS_REF.replace('refs/heads/', '')}|${process.env.AS_REF.replace('refs/heads/', '')}>`,
+              text: `${process.env.AS_MESSAGE} by ${process.env.AS_AUTHOR.replace(/\<.+\>/, '')} succeeded in ${process.env.AS_TOOK} \n${process.env.AS_REPO}@<https://github.com/cerebral-inc/truepill/tree/${process.env.AS_REF.replace('refs/heads/', '')}|${process.env.AS_REF.replace('refs/heads/', '')}>`,
             }]
           }
       env:
