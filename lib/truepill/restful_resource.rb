@@ -41,10 +41,12 @@ module Truepill
     end
 
     def resource_path(id)
-      "#{resource_base}/#{id}/"
+      "#{resource_base}/#{id}"
     end
 
     def path_with_params(path, params)
+      return path if params.blank?
+
       [path, '/?', params.to_query].join
     end
 
