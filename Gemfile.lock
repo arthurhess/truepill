@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    truepill (0.0.1)
+    truepill (0.0.4)
       activesupport (~> 5.2.4)
       httparty (~> 0.18)
 
@@ -59,7 +59,7 @@ GEM
       simplecov-html (~> 0.11)
     simplecov-html (0.12.3)
     thread_safe (0.3.6)
-    tzinfo (1.2.8)
+    tzinfo (1.2.9)
       thread_safe (~> 0.1)
     webmock (3.9.1)
       addressable (>= 2.3.6)
