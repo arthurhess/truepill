@@ -11,7 +11,7 @@ RSpec.describe Truepill::RestfulResource do
   context "#resource_path" do
     it "is the base resource path for the class plus the passed identifier" do
       resource = Truepill::RestfulResource.new
-      expect(resource.send(:resource_path, 123)).to eq('restful_resource/123/')
+      expect(resource.send(:resource_path, 123)).to eq('restful_resource/123')
     end
   end
 
