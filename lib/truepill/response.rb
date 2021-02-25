@@ -18,13 +18,18 @@ module Truepill
 
     def success?
       %w(success processed).include?(data[:status]) || !error?
+    rescue => e
+      false
     end
 
     def error?
       code.to_i / 100 != 2 || data[:statusCode] == 400
+    rescue => e
+      true
     end
 
     def errors
+      return ["Invalid response: #{body}"] unless data.is_a?(Hash)
       data[:validation_errors]&.map do |error_data|
         "#{error_data[:key]} #{error_data[:message]}"
       end
