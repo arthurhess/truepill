@@ -36,13 +36,17 @@ module Truepill
     private
 
     def send_authenticated(method, url, data = {})
-      options = if data[:multipart]
-        # don't covert to json here for multipart because it messes with files.
-        { body: data, multipart: true }
-      elsif data.empty?
-        { body: '' }
+      if method == :get
+        options = {}
       else
-        { body: data.to_json }
+        options = if (data.nil? || data.empty?)
+          { body: nil }
+        elsif data[:multipart]
+          # don't covert to json here for multipart because it messes with files.
+          { body: data, multipart: true }
+        else
+          { body: data.to_json }
+        end
       end
       options.merge!(headers: headers(data))
 
