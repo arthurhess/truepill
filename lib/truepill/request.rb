@@ -39,6 +39,8 @@ module Truepill
       options = if data[:multipart]
         # don't covert to json here for multipart because it messes with files.
         { body: data, multipart: true }
+      elsif data.empty?
+        { body: '' }
       else
         { body: data.to_json }
       end
