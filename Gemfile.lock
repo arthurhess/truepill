@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    truepill (0.0.6)
+    truepill (0.0.7)
       activesupport (~> 5.2.4)
       httparty (~> 0.18)
 
