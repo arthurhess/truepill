@@ -23,17 +23,3 @@ jobs:
       run: bundle install
     - name: Run tests
       run: bundle exec rspec
-    - uses: 8398a7/action-slack@v3
-      with:
-        status: custom
-        if: always()
-        fields: job,commit,repo,ref,author,took,message
-        custom_payload: |
-          {
-            attachments: [{
-              color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
-              text: `${process.env.AS_MESSAGE} by ${process.env.AS_AUTHOR.replace(/\<.+\>/, '')} succeeded in ${process.env.AS_TOOK} \n${process.env.AS_REPO}@<https://github.com/cerebral-inc/truepill/tree/${process.env.AS_REF.replace('refs/heads/', '')}|${process.env.AS_REF.replace('refs/heads/', '')}>`,
-            }]
-          }
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
