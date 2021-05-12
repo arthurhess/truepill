@@ -16,27 +16,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
-    # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
-    # change this to (see https://github.com/ruby/setup-ruby#versioning):
-    # uses: ruby/setup-ruby@v1
-      uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
+      uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.4.6
     - name: Install dependencies
       run: bundle install
     - name: Run tests
       run: bundle exec rspec
-    - uses: 8398a7/action-slack@v3
-      with:
-        status: custom
-        if: always()
-        fields: job,commit,repo,ref,author,took,message
-        custom_payload: |
-          {
-            attachments: [{
-              color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
-              text: `${process.env.AS_MESSAGE} by ${process.env.AS_AUTHOR.replace(/\<.+\>/, '')} succeeded in ${process.env.AS_TOOK} \n${process.env.AS_REPO}@<https://github.com/cerebral-inc/truepill/tree/${process.env.AS_REF.replace('refs/heads/', '')}|${process.env.AS_REF.replace('refs/heads/', '')}>`,
-            }]
-          }
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
