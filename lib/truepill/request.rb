@@ -14,6 +14,7 @@ module Truepill
 
   class Request
     include HTTParty
+    ssl_version :TLSv1_2
     debug_output
 
     def get(path)
