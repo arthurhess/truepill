@@ -9,6 +9,8 @@ module Truepill
     attr_reader :environment
     # [String] Client API Key (obtain from the Truepill portal)
     attr_accessor :api_key
+    # [String] SSL Version, optional, TLS 1.2 by default
+    attr_accessor :aal_version
 
     def initialize
       # default to sandbox environment
