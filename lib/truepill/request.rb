@@ -14,8 +14,11 @@ module Truepill
 
   class Request
     include HTTParty
-    ssl_version (Truepill.configuration.ssl_version || :TLSv1_2)
     debug_output
+
+    def self.ssl_version(version)
+      Truepill.respond_to?(:configuration) ? Truepill.configuration.ssl_version
+    end
 
     def get(path)
       perform_checks(path)
