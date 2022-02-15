@@ -6,7 +6,7 @@ require "truepill/response"
 require "truepill/version"
 
 resources_path = File.expand_path('truepill/resources/*.rb', File.dirname(__FILE__))
-Dir[resources_path].each { |f| require f[/\/lib\/(.+)\.rb$/, 1] }
+Dir[resources_path].each { |f| require f[/\/lib\/(truepill\/resources\/.+)\.rb$/, 1] }
 
 require 'active_support/core_ext/hash'
 
